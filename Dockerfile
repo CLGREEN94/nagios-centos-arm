@@ -1,5 +1,5 @@
 FROM ajeetraina/centos7-arm 
-MAINTAINER "Ajeet S Raina" <Ajeet_Raina@dell.com>
+MAINTAINER "ZeroDeth" <sherif@hosty.uk>
 
 ADD nrpe /etc/init.d/
 RUN chmod +x /etc/init.d/nrpe

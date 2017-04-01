@@ -1,4 +1,4 @@
-# This script installs Nagios 4.0.8 and Nagios Plugin 2.0.3 on Centos 7.0 system.
+# This script installs Nagios 4.3.1 and Nagios Plugin 2.1.4 on Centos 7.0 system.
 
 #Updating the OS along with required packages.
 yum -y update
@@ -19,12 +19,12 @@ usermod -a -G nagios apache
 cd /root/
 
 # Download Nagios Bits
-wget http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-4.0.8.tar.gz
-wget http://nagios-plugins.org/download/nagios-plugins-2.0.3.tar.gz
+wget http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-4.3.1.tar.gz
+wget http://nagios-plugins.org/download/nagios-plugins-2.1.4.tar.gz
 
 # Building the Nagios tool
-tar xf nagios-4.0.8.tar.gz
-cd nagios-4.0.8/
+tar xf nagios-4.3.1.tar.gz
+cd nagios-4.3.1/
 ./configure --with-command-group=nagcmd
 make all; make install
 make install-init; make install-config
@@ -36,8 +36,8 @@ echo "nagiosadmin:M.t9dyxR3OZ3E" > /usr/local/nagios/etc/htpasswd.users
 
 # Installing Nagios plugins
 cd /root/
-tar xf nagios-plugins-2.0.3.tar.gz
-cd nagios-plugins-2.0.3
+tar xf nagios-plugins-2.1.4.tar.gz
+cd nagios-plugins-2.1.4
 ./configure --with-nagios-user=nagios --with-nagios-group=nagios
 make; make install
 
